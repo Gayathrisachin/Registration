@@ -40,10 +40,7 @@
     <input class="input" type="text"  placeholder="Password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" > 
     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
       <div *ngIf="f.password.errors.required">Password is required</div>
-      <div *ngIf="f.password.length>8">Password is strong</div>
-
       <div *ngIf="f.password.errors.minlength">Password is Poor</div>
-      <div *ngIf="f.password.errors.maxlength">Password is strong</div>
       <div *ngIf="f.password.errors.pattern">Password should contain minimum 6 characters,atleast one capital letter,one number and one special character</div>
 
     </div> 
