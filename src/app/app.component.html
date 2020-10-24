@@ -4,57 +4,63 @@
   <!-- <div class="container"> -->
     <div class="wrap">
     
-    <form [formGroup]="form" class="form" >
+    <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()" >
     <span class="form-title">
     Registration
     </span>
     <div class="wrap-input">
-      <input type="text" class="user" placeholder="First Name" formControlName="firstName"> 
-      <div *ngIf="submitted && form.controls.firstName.errors" class="error">
-        <div *ngIf="form.controls.firstName.errors.required">First Name is required</div>
+      <input type="text" class="input" placeholder="First Name" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"> 
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+        <div *ngIf="f.firstName.errors.required">First Name is required</div>
       </div>   
       </div>
       <div class="wrap-input">
-        <input id="phone" class="input" type="text"  placeholder="Last Name" formControlName="lastName">
-        <div *ngIf="submitted && form.controls.lastName.errors" class="error">
-          <div *ngIf="form.controls.lastName.errors.required">Last Name is required</div>
+        <input id="phone" class="input" type="text"  placeholder="Last Name" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
         </div> 
         </div>
     <div class="wrap-input">
-      <input id="phone" class="input" type="text" placeholder="Phone Number" formControlName="phone">
-      <div *ngIf="submitted && form.controls.phone.errors" class="error">
-        <div *ngIf="form.controls.phone.errors.required">Phone Number is required</div>
-        <div *ngIf="form.controls.phone.errors.pattern">Please enter valid phone number</div>
+      <input id="phone" class="input" type="text" placeholder="Phone Number" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+        <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+        <div *ngIf="f.phone.errors.pattern">Please enter valid phone number</div>
 
       </div> 
       </div>
     <div class="wrap-input validate-input" >
-    <input id="email" class="input" type="text" placeholder="Email" formControlName="email">
-    <div *ngIf="submitted && form.controls.email.errors" class="error">
-      <div *ngIf="form.controls.email.errors.required">Email is required</div>
-      <div *ngIf="form.controls.email.errors.pattern">Please enter valid EmailId</div>
+    <input id="email" class="input" type="text" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+      <div *ngIf="f.email.errors.required">Email is required</div>
+      <div *ngIf="f.email.errors.pattern">Please enter valid EmailId</div>
 
     </div> 
     </div>
     <div class="wrap-input">
-    <input class="input" type="text"  placeholder="Password" formControlName="password1" > 
-    <div *ngIf="submitted && form.controls.password1.errors" class="error">
-      <div *ngIf="form.controls.password1.errors.required">Password is required</div>
-      <div *ngIf="form.controls.password1.errors.pattern">Password should contain atleast one capital letter,one number and one special character</div>
+    <input class="input" type="text"  placeholder="Password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" > 
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+      <div *ngIf="f.password.errors.required">Password is required</div>
+      <div *ngIf="f.password.length>8">Password is strong</div>
+
+      <div *ngIf="f.password.errors.minlength">Password is Poor</div>
+      <div *ngIf="f.password.errors.maxlength">Password is strong</div>
+      <div *ngIf="f.password.errors.pattern">Password should contain minimum 6 characters,atleast one capital letter,one number and one special character</div>
 
     </div> 
     </div>
-    <div class="wrap-input">
-      <input  class="input" type="text"  placeholder="Re enter Password" formControlName="password2">
-      <div *ngIf="submitted && form.controls.password2.errors" class="error">
-        <div *ngIf="form.controls.password2.errors.required">Reenter Password is required</div>
+    <div class="wrap-input" >
+      <input  class="input"  type="text" placeholder="Re enter Password"  [disabled]="isDisabled(value)"  formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+      <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+        <div *ngIf="f.confirmPassword.errors.required">Reenter Password is required</div>
+        <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+
       </div> 
       </div>
     <div class="wrap-input">
       <input type="checkbox"><span style="margin-left: 10px;color: #ffffff;">by signing up,I accept term and condition</span>
     </div>
     <div class="wrap-input">
-      <button class="input-button" type="button" (click)="onSubmit()">Register</button>
+      <button class="input-button" >Register</button>
   
     </div>
     </form>
@@ -73,7 +79,13 @@
     </div>
    
   <!-- </div> -->
-
+  <div class="footer1"  >
+    <div class="copy1">
+      <a> Help </a>
+      <a> Privacy </a>
+      <a> Terms and Conditions </a>
+    </div>
+  </div>
   <div class="footer"  >
     <div class="copy">Copyrigt 2019</div>
   </div>

@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "firstName": "vishal",
+      "lastName": "soraganvi",
+      "phone": "8088181392",
+      "email": "ysvishalsrgnv@gmail.com",
+      "password": "Gayatri@123",
+      "confirmPassword": "Gayatri@123"
+    },
+    {
+      "firstName": "sssdcs",
+      "lastName": "dsds",
+      "phone": "8014512244",
+      "email": "ysvishalsrgnv@gmail.com",
+      "password": "Ajk@1233",
+      "confirmPassword": "Ajk@1233",
+      "id": 2
+    },
+    {
+      "firstName": "sdf",
+      "lastName": "dsf",
+      "phone": "8088181392",
+      "email": "ysvishalsrgnv@gmail.com",
+      "password": "Assds@1s",
+      "confirmPassword": "Assds@1s",
+      "id": 3
+    },
+    {
+      "firstName": "dsfs",
+      "lastName": "dsds",
+      "phone": "8088181392",
+      "email": "ysvishalsrgnv@gmail.com",
+      "password": "dsdf@1As",
+      "confirmPassword": "dsdf@1As",
+      "id": 4
+    }
+  ]
+}

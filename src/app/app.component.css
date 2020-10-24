@@ -12,9 +12,10 @@ a {
 .topnav {
     width: 100vw;
     background-color: #666666;
+    height: 60px;
   }
  .logo{
-     padding: 25px;
+     padding: 5px 35px;
      color: #ffffff;
      font-size: 35px;
  }
@@ -70,7 +71,7 @@ width: 50%;
   flex-wrap: wrap;
   align-items: stretch;
   flex-direction: row-reverse;
-  margin:50px auto;
+  margin:25px auto;
 
 }
 
@@ -93,7 +94,7 @@ width: 50%;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.1);
   border-top-left-radius: 25px;
 }
 
@@ -139,7 +140,7 @@ width: 50%;
 input.input, input[type="text"] {
   width:100%;
   padding-left: 8px;
-  height: 40px;
+  height: 30px;
   border-radius: 25px;
   background-color:rgb(238, 230, 230);
   border: none;
@@ -172,6 +173,20 @@ input.input, input[type="text"] {
 .footer .copy{
   padding-top: 25px;
   color: #ffffff;
+}
+.footer1{
+  text-align: center;
+  
+  /* background: #666666; */
+  height: 30px;
+}
+.footer1 .copy1 a{
+
+  padding-top: 25px;
+  color: #000000;
+}
+.copy1 a:not(:last-child)::after{
+  content:"|"
 }
 @media (max-width: 992px) {
   .form {
@@ -234,6 +249,4 @@ input.input, input[type="text"] {
     border-top: none;
   }
 }
-
-
 
